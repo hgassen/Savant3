@@ -898,7 +898,9 @@ class Savant3 {
 	{
 		// get the arguments; there may be 1 or 2.
 		$arg0 = @func_get_arg(0);
-		$arg1 = @func_get_arg(1);
+		if (func_num_args() > 1) {
+			$arg1 = @func_get_arg(1);			
+		}
 		
 		// assign from object
 		if (is_object($arg0)) {
